@@ -77,7 +77,7 @@
         }
 
         .player-card {
-            width: 180px;
+            width: 250px;
             background: linear-gradient(to bottom, #f7d794, #e6b34a);
             border-radius: 20px;
             overflow: hidden;
@@ -134,8 +134,51 @@
             display: block;
         }
 
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: linear-gradient(to bottom, #f7d794, #e6b34a);
+            border-bottom: 1px solid #e6b34a;
+        }
+
+        .player-rating {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .player-position {
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .player-country {
+            margin: 5px 0;
+        }
+
+        .player-club {
+            margin: 5px 0;
+        }
+
         .card-body {
             padding: 0 10px;
+            text-align: center;
+        }
+
+        .player-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .player-stats span {
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
         }
 
         .team-card {
