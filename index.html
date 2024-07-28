@@ -336,27 +336,39 @@
         function divideTeams(numTeams) {
             const maxTeamSize = 5;
 
-            // Check if the total number of players requires splitting into 3 teams
+            // Ensure we have exactly 3 teams if more than 10 players
             if (selectedPlayers.length > 10) {
                 numTeams = 3;
             } else {
                 numTeams = Math.max(1, Math.floor(selectedPlayers.length / maxTeamSize));
             }
 
+            let playersList = selectedPlayers.map(index => players[index]);
+
+            // Sort players by rank (assume higher rank value is better)
+            playersList.sort((a, b) => b.rank - a.rank);
+
+            // Shuffle players to add randomness
+            for (let i = playersList.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [playersList[i], playersList[j]] = [playersList[j], playersList[i]];
+            }
+
             let teams = Array.from({ length: numTeams }, () => []);
 
-            // If more than 10 players, assign first 10 players to the first two teams (5 each), rest to the third
-            if (selectedPlayers.length > 10) {
+            // First distribute 5 players to the first two teams if there are more than 10 players
+            if (playersList.length > 10) {
                 for (let i = 0; i < 10; i++) {
-                    teams[i < 5 ? 0 : 1].push(players[selectedPlayers[i]]);
+                    teams[i < 5 ? 0 : 1].push(playersList[i]);
                 }
-                for (let i = 10; i < selectedPlayers.length; i++) {
-                    teams[2].push(players[selectedPlayers[i]]);
+                // Distribute the remaining players to the third team
+                for (let i = 10; i < playersList.length; i++) {
+                    teams[2].push(playersList[i]);
                 }
             } else {
                 // Distribute players evenly across teams if 10 or fewer players
-                selectedPlayers.forEach((playerIndex, i) => {
-                    teams[i % numTeams].push(players[playerIndex]);
+                playersList.forEach((player, i) => {
+                    teams[i % numTeams].push(player);
                 });
             }
 
@@ -371,14 +383,14 @@
                 const teamCard = document.createElement('div');
                 teamCard.className = 'team-card';
                 teamCard.innerHTML = `
-            <h3>קבוצה ${index + 1}</h3>
+            <h3>Team ${index + 1}</h3>
             ${team.map(player => `
                 <div class="player-name">${player.name}</div>
-                
             `).join('')}
         `;
                 teamContainer.appendChild(teamCard);
             });
+
             teamCard.className = 'team-card';
         }
 
