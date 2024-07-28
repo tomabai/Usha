@@ -62,29 +62,116 @@
             margin-bottom: 30px;
         }
 
-        .player-card,
-        .team-card,
         .added-player-card {
-            background-color: var(--card-background);
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            width: 180px;
+            background: linear-gradient(to bottom, #f7d794, #e6b34a);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #000;
+            margin: 20px auto;
+            position: relative;
+            padding-bottom: 15px;
         }
 
-        .player-card:hover,
-        .team-card:hover,
-        .added-player-card:hover {
-            transform: translateY(-5px);
+        .player-card {
+            width: 180px;
+            background: linear-gradient(to bottom, #f7d794, #e6b34a);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #000;
+            margin: 20px auto;
+            position: relative;
+            padding-bottom: 15px;
         }
 
-        .player-name,
-        .player-rank,
-        .added-player-name {
+        .card-header {
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            background: linear-gradient(to bottom, #f7d794, #e6b34a);
+            border-bottom: 1px solid #e6b34a;
+        }
+
+        .card-header .rating {
+            font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 1.1em;
+        }
 
+        .card-header .position {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+
+        .card-header .nation,
+        .card-header .club {
+            margin: 5px 0;
+        }
+
+        .card-header img {
+            width: 25px;
+            height: auto;
+        }
+
+        .span {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+        }
+
+        .player-image img {
+            width: 90%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            margin: 10px auto;
+            display: block;
+        }
+
+        .card-body {
+            padding: 0 10px;
+        }
+
+        .team-card {
+            width: 180px;
+            background: linear-gradient(to bottom, #f7d794, #e6b34a);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #000;
+            margin: 20px auto;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0 5px;
+            letter-spacing: 1px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .stats span {
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
         }
 
         .controls {
@@ -149,6 +236,16 @@
             font-size: 1em;
         }
 
+        .player-country img {
+            width: 20px;
+            height: auto;
+        }
+
+        .player-club img {
+            width: 20px;
+            height: auto;
+        }
+
         .submit-btn,
         .reset-btn {
             background-color: var(--primary-color);
@@ -196,6 +293,7 @@
             .reset-btn {
                 margin: 10px 0;
             }
+
         }
     </style>
 </head>
@@ -289,9 +387,27 @@
                 const playerCard = document.createElement('div');
                 playerCard.className = 'player-card';
                 playerCard.innerHTML = `
-      <div class="player-name">${player.name}</div>
-      <div class="player-rank">Rank: ${player.rank}</div>
-      <div class="controls">
+   <div class="player-header">
+        <span class="player-rating">92</span>
+        <span class="player-position">ST</span>
+        <span class="player-country"><img src="images/israel.png" alt="Country"></span>
+        <span class="player-club"><img src="images/goren.jpg" alt="Club"></span>
+    </div>
+        <div class="player-image">
+        <img src="images/face.jpeg" alt="Player">
+    </div>
+    <div class="player-info">
+        <h3 class="player-name">${player.name}</h3>
+        <h3 class="player-name">דירוג ${player.rank}</h3>
+        <div class="player-stats">
+            <span>PAC: 90</span>
+            <span>SHO: 94</span>
+            <span>PAS: 86</span>
+            <span>DRI: 83</span>
+            <span>DEF: 72</span>
+            <span>PHY: 81</span>
+        </div>
+    </div>
         <button onclick="togglePlayerSelection(${index})">
           ${selectedPlayers.includes(index) ? 'Remove' : 'Add'}
         </button>
@@ -383,7 +499,7 @@
                 const teamCard = document.createElement('div');
                 teamCard.className = 'team-card';
                 teamCard.innerHTML = `
-            <h3>Team ${index + 1}</h3>
+            <h3>קבוצה ${index + 1}</h3>
             ${team.map(player => `
                 <div class="player-name">${player.name}</div>
             `).join('')}
