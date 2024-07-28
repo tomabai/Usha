@@ -343,38 +343,39 @@
 
     <script>
         let players = [
-            { "name": "תום", "rank": 1 },
-            { "name": "נווה", "rank": 1 },
-            { "name": "סתיו", "rank": 2 },
-            { "name": "מתן", "rank": 2 },
-            { "name": "שטיינר", "rank": 2 },
-            { "name": "אושרי", "rank": 2 },
-            { "name": "אודי", "rank": 1 },
-            { "name": "אופיר השרוך", "rank": 1 },
-            { "name": "שלו", "rank": 1 },
-            { "name": "אופיר", "rank": 1 },
-            { "name": "ענבר", "rank": 1 },
-            { "name": "אלירם", "rank": 2 },
-            { "name": "אלירן", "rank": 2 },
-            { "name": "גורן", "rank": 2 },
-            { "name": "נוב", "rank": 2 },
-            { "name": "נדי", "rank": 2 },
-            { "name": "עומר", "rank": 2 },
-            { "name": "אורן", "rank": 1 },
-            { "name": "מיכאל", "rank": 1 },
-            { "name": "פלטין ", "rank": 1 },
-            { "name": "אודי דרעי", "rank": 2 },
-            { "name": "אילן", "rank": 2 },
-            { "name": "שלומי", "rank": 1 },
-            { "name": "טל רונן", "rank": 1 },
-            { "name": "טל מגן ", "rank": 2 },
-            { "name": "אורי", "rank": 2 },
-            { "name": "אלון", "rank": 2 },
-            { "name": "גלעד", "rank": 1 },
-            { "name": "יוגב", "rank": 2 },
-            { "name": "ניר", "rank": 2 },
-            { "name": "עופר", "rank": 2 },
-            { "name": "ניב", "rank": 2 }
+            { "name": "תום", "rank": 1, "image": "images/tom.png" },
+            { "name": "נווה", "rank": 1, "image": "images/nave.png" },
+            { "name": "סתיו", "rank": 2, "image": "images/guli.png" },
+            { "name": "מתן", "rank": 2, "image": "images/matan.png" },
+            { "name": "שטיינר", "rank": 2, "image": "images/shtiner.png" },
+            { "name": "אושרי", "rank": 2, "image": "images/oshri.png" },
+            { "name": "אודי", "rank": 1, "image": "images/udi.png" },
+            { "name": "אופיר השרוך", "rank": 1, "image": "images/ophir.png" },
+            { "name": "שלו", "rank": 1, "image": "images/shalev.png" },
+            { "name": "אופיר", "rank": 1, "image": "images/ophirusha.png" },
+            { "name": "ענבר", "rank": 1, "image": "images/inbar.png" },
+            { "name": "אלירם", "rank": 2, "image": "images/eliram.png" },
+            { "name": "אלירן", "rank": 2, "image": "images/eliran.png" },
+            { "name": "גורן", "rank": 2, "image": "images/goren1.png" },
+            { "name": "נוב", "rank": 2, "image": "images/nov.jpg" },
+            { "name": "נדי", "rank": 2, "image": "images/nadav.png" },
+            { "name": "עומר", "rank": 2, "image": "images/omer.png" },
+            { "name": "אורן", "rank": 1, "image": "images/oran.png" },
+            { "name": "מיכאל", "rank": 1, "image": "images/michael.png" },
+            { "name": "פלטין ", "rank": 1, "image": "images/tomer.png" },
+            { "name": "אודי דרעי", "rank": 2, "image": "images/udideri.png" },
+            { "name": "אילן", "rank": 2, "image": "images/ilan.png" },
+            { "name": "שלומי", "rank": 1, "image": "images/shlomi.png" },
+            { "name": "טל רונן", "rank": 1, "image": "images/talronen.png" },
+            { "name": "טל מגן ", "rank": 2, "image": "images/talmagen.png" },
+            { "name": "אורי", "rank": 2, "image": "images/uri.png" },
+            { "name": "אלון", "rank": 2, "image": "images/alon.png" },
+            { "name": "גלעד", "rank": 1, "image": "images/gilad.png" },
+            { "name": "יוגב", "rank": 2, "image": "images/yogev.png" },
+            { "name": "עופר", "rank": 2, "image": "images/ofer.png" },
+            { "name": "ניב", "rank": 2, "image": "images/niv.png" },
+            { "name": "עמרי", "rank": 1, "image": "images/omri.png" },
+            { "name": "צחוס", "rank": 2, "image": "images/tzach.png" }
 
         ];
 
@@ -394,7 +395,7 @@
         <span class="player-club"><img src="images/goren.jpg" alt="Club"></span>
     </div>
         <div class="player-image">
-        <img src="images/face.jpeg" alt="Player">
+        <img src=${player.image} alt="Player">
     </div>
     <div class="player-info">
         <h3 class="player-name">${player.name}</h3>
