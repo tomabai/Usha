@@ -1,0 +1,382 @@
+ /* Existing CSS */
+ :root {
+     --primary-color: #28a745;
+     /* Green for primary elements */
+     --secondary-color: #ffffff;
+     /* White for secondary elements */
+     --background-color: #333;
+     /* Dark background */
+     --text-color: #ffffff;
+     /* White text */
+     --card-background: #444;
+     /* Dark card background */
+     --highlight-color: #f39c12;
+     /* Highlight color for buttons */
+ }
+
+ body {
+     font-family: 'Helvetica Neue', sans-serif;
+     background: url('images/soccer-field.jpg') no-repeat center center fixed;
+     background-size: cover;
+     color: var(--text-color);
+     line-height: 1.6;
+     padding: 20px;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     background: rgba(0, 0, 0, 0.7);
+     border-radius: 10px;
+     padding: 20px;
+ }
+
+ h1,
+ h2 {
+     text-align: center;
+     margin-bottom: 20px;
+     color: var(--primary-color);
+     font-family: 'Arial Black', sans-serif;
+     text-transform: uppercase;
+ }
+
+ h3 {
+     color: var(--secondary-color);
+     text-align: center;
+ }
+
+ .player-list,
+ .team-container,
+ .added-players-list {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 20px;
+     margin-bottom: 30px;
+ }
+
+ .added-player-card {
+     width: 180px;
+     background: linear-gradient(to bottom, #f7d794, #e6b34a);
+     border-radius: 20px;
+     overflow: hidden;
+     text-align: center;
+     font-family: 'Arial', sans-serif;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+     color: #000;
+     margin: 20px auto;
+     position: relative;
+     padding-bottom: 15px;
+ }
+
+ .player-card {
+     width: 250px;
+     background: linear-gradient(to bottom, #f7d794, #e6b34a);
+     border-radius: 20px;
+     overflow: hidden;
+     text-align: center;
+     font-family: 'Arial', sans-serif;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+     color: #000;
+     margin: 20px auto;
+     position: relative;
+     padding-bottom: 15px;
+ }
+
+ .card-header {
+     position: relative;
+     padding: 10px;
+     text-align: center;
+     background: linear-gradient(to bottom, #f7d794, #e6b34a);
+     border-bottom: 1px solid #e6b34a;
+ }
+
+ .card-header .rating {
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+
+ .card-header .position {
+     font-size: 1em;
+     margin-top: 5px;
+ }
+
+ .card-header .nation,
+ .card-header .club {
+     margin: 5px 0;
+ }
+
+ .card-header img {
+     width: 25px;
+     height: auto;
+ }
+
+ .span {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 5px;
+
+ }
+
+ .player-image img {
+     width: 90%;
+     border-radius: 50%;
+     border: 2px solid #fff;
+     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+     margin: 10px auto;
+     display: block;
+ }
+
+ .player-header {
+     display: flex;
+     justify-content: space-between;
+     padding: 10px;
+     background: linear-gradient(to bottom, #f7d794, #e6b34a);
+     border-bottom: 1px solid #e6b34a;
+ }
+
+ .player-rating {
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+
+ .player-position {
+     font-size: 1em;
+     font-weight: bold;
+     margin-top: 5px;
+ }
+
+ .player-country {
+     margin: 5px 0;
+ }
+
+ .player-club {
+     margin: 5px 0;
+ }
+
+ .card-body {
+     padding: 0 10px;
+     text-align: center;
+ }
+
+ .player-stats {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     font-size: 1em;
+     font-weight: bold;
+ }
+
+ .player-stats span {
+     width: 45%;
+     display: flex;
+     justify-content: space-between;
+     margin: 5px 0;
+ }
+
+ .team-card {
+     width: 180px;
+     background: linear-gradient(to bottom, #f7d794, #e6b34a);
+     border-radius: 20px;
+     overflow: hidden;
+     text-align: center;
+     font-family: 'Arial', sans-serif;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+     color: #000;
+     margin: 20px auto;
+     position: relative;
+     padding-bottom: 15px;
+ }
+
+ .name {
+     font-size: 1.2em;
+     font-weight: bold;
+     margin: 10px 0 5px;
+     letter-spacing: 1px;
+ }
+
+ .stats {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     font-size: 0.9em;
+     font-weight: bold;
+ }
+
+ .stats span {
+     width: 45%;
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 5px;
+ }
+
+ .controls {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 10px;
+ }
+
+ button {
+     background-color: var(--highlight-color);
+     color: var(--secondary-color);
+     border: none;
+     padding: 10px 20px;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     font-size: 1em;
+ }
+
+ button:hover {
+     background-color: var(--primary-color);
+ }
+
+ .team-selector {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 20px;
+ }
+
+ .team-selector button {
+     margin: 0 10px;
+ }
+
+ .add-player-form {
+     background-color: var(--card-background);
+     border-radius: 8px;
+     padding: 20px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     margin-bottom: 30px;
+ }
+
+ .add-player-form h3 {
+     margin-bottom: 15px;
+     color: var(--primary-color);
+ }
+
+ .form-group {
+     margin-bottom: 15px;
+ }
+
+ label {
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ input,
+ select {
+     width: 100%;
+     padding: 8px;
+     border: 1px solid #bdc3c7;
+     border-radius: 4px;
+     font-size: 1em;
+ }
+
+ .player-country img {
+     width: 20px;
+     height: auto;
+ }
+
+ .player-club img {
+     width: 20px;
+     height: auto;
+ }
+
+ .submit-btn,
+ .reset-btn {
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
+     border: none;
+     padding: 10px 20px;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ .submit-btn:hover,
+ .reset-btn:hover {
+     background-color: #218838;
+ }
+
+ .reset-section {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 20px;
+ }
+
+ .team-logo {
+     display: block;
+     margin: 0 auto 20px;
+     max-width: 200px;
+     width: 100%;
+     height: auto;
+ }
+
+ @media (max-width: 768px) {
+
+     .player-list,
+     .team-container,
+     .added-players-list {
+         grid-template-columns: 1fr;
+     }
+
+     .team-selector,
+     .reset-section {
+         flex-direction: column;
+     }
+
+     .team-selector button,
+     .reset-btn {
+         margin: 10px 0;
+     }
+
+     /* Search container styles */
+     .search-container {
+         margin: 20px 0;
+         text-align: right;
+         padding: 0 15px;
+         /* Add padding to prevent touching screen edges */
+     }
+
+     /* Search input styles */
+     #searchInput {
+         width: 100%;
+         max-width: 300px;
+         padding: 10px 15px;
+         font-size: 16px;
+         border: 2px solid #ccc;
+         border-radius: 20px;
+         outline: none;
+         transition: border-color 0.3s ease;
+         direction: rtl;
+         background-color: #f8f8f8;
+         box-sizing: border-box;
+         /* Include padding and border in element's total width and height */
+     }
+
+     #searchInput::placeholder {
+         color: #999;
+     }
+
+     #searchInput:focus {
+         border-color: #4a90e2;
+         box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+     }
+
+     /* Responsive design */
+     @media (max-width: 768px) {
+         .search-container {
+             padding: 0 10px;
+             /* Slightly reduce padding on smaller screens */
+         }
+
+         #searchInput {
+             max-width: 100%;
+             font-size: 14px;
+             /* Slightly reduce font size on mobile */
+             padding: 8px 12px;
+             /* Adjust padding for better fit on small screens */
+         }
+     }
+
+
+ }
